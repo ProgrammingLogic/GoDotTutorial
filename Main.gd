@@ -18,6 +18,9 @@ func game_over():
 	$ScoreTimer.stop()
 	$MobTimer.stop()
 	
+	$Music.stop()
+	$DeathSound.play()
+	
 	$HUD.show_game_over()
 	
 
@@ -31,6 +34,8 @@ func new_game():
 	
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
+	
+	$Music.play()
 	
 
 
