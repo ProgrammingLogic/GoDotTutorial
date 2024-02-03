@@ -13,6 +13,20 @@ func _process(delta):
 	pass
 
 
+func show_game_over():
+	show_message("Game Over")
+	
+	# Wait until the MessageTime has counted down 
+	await $MessageTimer.timeout
+	
+	$Message.text = "Dodge the Creeps!"
+	$Message.show()
+	
+	# Make a one shot timer and wait for it to finish
+	await get_tree().create_timer(1.0).timeout
+	$StartButton.show()
+
+
 func show_message(text):
 	$Message.text = text
 	$Message.show()
