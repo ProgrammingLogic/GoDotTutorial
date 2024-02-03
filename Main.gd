@@ -22,6 +22,8 @@ func game_over():
 	
 
 func new_game():
+	get_tree().call_group("mobs", "queue_free")
+	
 	score = 0
 	
 	$HUD.update_score(score)
