@@ -38,8 +38,9 @@ func update_score(score):
 
 
 func _on_message_timer_timeout():
-	pass # Replace with function body.
+	$Message.hide()
 
 
 func _on_start_button_pressed():
-	pass # Replace with function body.
+	$StartButton.hide()
+	start_game.emit()
